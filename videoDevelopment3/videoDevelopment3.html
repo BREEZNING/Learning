@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>拓展学习</title>
+	<script type="text/javascript">
+     window.onload = function () {
+        var title = document.getElementById('tit');  //获取 input
+        var oArea = document.getElementById('content'); //获取  textarea
+        var btn = document.getElementById('btn');   //获取按钮
+        var message = document.getElementById("message");   //获取 ul
+        var num = document.getElementById("num");   // 获取数字字数 ID
+
+        btn.onclick = function () {
+            var txtTitle=title.value;    //定义获取文本框里的值
+            var txtContent=oArea.value;  //定义获取文本域里的值
+            var li=document.createElement("li");  //创建节点
+            if(title.value==""){
+                alert("昵称不能为空!");
+                title.focus();
+                return false;
+            }
+            if(oArea.value==""){
+                alert("内容不能为空!");
+                oArea.focus();
+                return false;
+            }
+            li.innerHTML="<a href='javascript:;'></a><h3>" + txtTitle + "</h3><p>"+ txtContent + "</p>";   //li.innerHTML 把文本框和文本域里面的值转换成文档
+            message.insertBefore(li,message.firstChild);  // 创建节点
+            // insertBefore 在已有的节点前插入一个新的节点
+            // appendChild  在已有的几点后插入一个新的节点
+            title.value="";  //提交完后文本框消除数据
+            title.focus();   //提交完后光标显示在文本框
+            oArea.value="";  //提交完后文本域消除数据
+            num.innerHTML="200";
+            // 删除功能
+            var del = li.getElementsByTagName("a")[0];  //获取删除的超链接
+            del.onclick = function() {
+                message.removeChild( li );  //寻找到父级删除
+            };
+        };
+        oArea.onkeyup = function(){
+            var len = oArea.value.length;
+            var n = 200 - len;
+            num.innerHTML = n;
+
+        };
+    };    
+    </script>	
+	<style type="text/css"></style>
+	<link rel="stylesheet" type="text/css" href="videoDevelopmentCSS.css" />
+</head>
+<body>
+    <div class="header">
+    	<div id="logo" style="float: left;">
+    		<img src="images/logo.png" style="height: 62px;">
+    	</div>
+     	<div id="menu">
+     		<ul>
+            <li><a href="../index.html">导学</a></li>
+            <li>
+                <a href="">教学</a>
+                <div class="dropdown-content">
+                    <a href="../textTeaching/textTeaching.html">简单认识</a>
+                    <a href="../smallClass1/smallClass1.html">微课1</a>
+                    <a href="../smallClass2/smallClass2.html">微课2</a>
+                </div>    
+            </li>
+            <li><a href="../exam/exam.html">测试</a></li>
+            <li><a href="../textDevelopment/textDevelopment.html">拓展</a></li>
+            <li><a href="../evaluation/evaluation.html">评价反馈</a></li>
+            </ul>
+     	</div>
+     	<div style="width: 100%;background-color: rgb(0,0,0);"><img src="images/head.jpg" width="82%"></div>
+        <div>
+        <p id="title">语音识别技术的拓展</p>
+        <p id="titleAppend">在进行基础原理学习和巩固测试后进行拓展</p>
+        </div>
+    </div>
+    <div id="list">
+        <ul>
+        <li><a href="../textDevelopment/textDevelopment.html" class="normal">/ 链接材料 /</a></li>
+        <li><a href="" id="special">/ 视频 /</a></li>
+        <li><a href="../officialAccountsDevelopment/officialAccountsDevelopment.html" class="normal">/ 动态&公众号 /</a></li>
+        </ul>
+    </div>
+    <div id="main">
+    	<div style="float: left;margin-left: 180px;">
+            <iframe src="https://haokan.baidu.com/v?pd=wisenatural&vid=3733734452354791749" width="880px" height="500px" frameborder=0 scrolling="no" vspace="100" allowfullscreen></iframe>
+        </div>
+        <div id="explanation">
+            <h2>播放列表</h2>
+            <ul>
+                <a href="../videoDevelopment/videoDevelopment.html" class="normaltext"><li>语音识别是什么原理？</li></a>
+                <a href="../videoDevelopment2/videoDevelopment2.html" class="normaltext"><li>语音识别技术的前世今生</li></a>
+                <a href="../videoDevelopment3/videoDevelopment3.html" id="specialtext"><li>90后速记师和语音识别技术间的较量</li></a>
+                <a class="normaltext1"><li>期待你在评论区分享更多视频资源……<br>(๑>◡<๑) </li></a>
+            </ul>
+            <p>👈双击放大视频</p>
+        </div>
+    </div>
+   <br><br><br><br><br><br><br><br>
+    <div id="share">
+        <h2 style="margin-left: 90px;margin-top: 50px;float: left;display: block;color: pink;background-color: black;width: 120px;letter-spacing: 6px;text-align: center;padding: 10px;">分享区</h2>
+        <div id="box">
+            你的昵称: <input type="text" name="txt" id="tit" value=""><br>
+            分享内容: <textarea name="message" id="content" maxlength="200"></textarea>
+            &nbsp;&nbsp;<input type="button" id="btn" value="分享出去"> &nbsp;<span>可以输入<span id="num">200</span>个字</span>
+        </div><br><br><br><br><br><br><br><br><br><br><br>
+        <div id="resources">
+            <h2>资源区</h2>
+            <ul id="message"></ul>
+        </div>
+    </div><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <div class="copyright">
+        2018&nbsp;&copy;&nbsp;CaiFH
+    </div>
+
+
+</body>
+</html>

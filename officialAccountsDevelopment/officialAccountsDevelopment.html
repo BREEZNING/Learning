@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>拓展学习</title>
+	<style type="text/css"></style>
+	<link rel="stylesheet" type="text/css" href="officialAccountsDevelopmentCSS.css" />
+</head>
+<body>
+    <div class="header">
+    	<div id="logo" style="float: left;">
+    		<img src="images/logo.png" style="height: 62px;">
+    	</div>
+     	<div id="menu">
+     		<ul>
+            <li><a href="../index.html">导学</a></li>
+            <li>
+                <a href="">教学</a>
+                <div class="dropdown-content">
+                    <a href="../textTeaching/textTeaching.html">简单认识</a>
+                    <a href="../smallClass1/smallClass1.html">微课1</a>
+                    <a href="../smallClass2/smallClass2.html">微课2</a>
+                </div>    
+            </li>
+            <li><a href="../exam/exam.html">测试</a></li>
+            <li><a href="../textDevelopment/textDevelopment.html">拓展</a></li>
+            <li><a href="../evaluation/evaluation.html">评价反馈</a></li>
+            </ul>
+     	</div>
+     	<div style="width: 100%;background-color: rgb(0,0,0);"><img src="images/head.jpg" width="82%"></div>
+        <div>
+        <p id="title">语音识别技术的拓展</p>
+        <p id="titleAppend">在进行基础原理学习和巩固测试后进行拓展</p>
+        </div>
+    </div>
+    <div id="list">
+        <ul>
+        <li><a href="../textDevelopment/textDevelopment.html" class="normal">/ 链接材料 /</a></li>
+        <li><a href="../videoDevelopment/videoDevelopment.html" class="normal">/ 视频 /</a></li>
+        <li><a href="" id="special">/ 动态&公众号 /</a></li>
+        </ul>
+    </div>
+    <div style="width: 92%">
+    <div style="width: 600px;margin-left: 180px;margin-top: 65px;">
+    	<h1 style="margin-left: 60px;">动态新闻</h1>
+        <div class="container">
+            <div class="wrap" style="left: -600px;">
+                <a href="http://www.iflytek.com/"><img src="images/5.jpg"></a>
+                <a href="https://tech.china.com/article/20181119/kejiyuan1108217393.html"><img src="images/1.jpg"></a>
+                <a href="https://www.36kr.com/p/5162462"><img src="images/2.jpg"></a>
+                <a href="http://www.sohu.com/a/117272973_413981"><img src="images/3.jpg"></a>
+                <a href="http://www.fortunechina.com/business/c/2018-03/19/content_303319.htm"><img src="images/4.jpg"></a>
+                <a href="http://www.iflytek.com/"><img src="images/5.jpg"></a>
+                <a href="https://tech.china.com/article/20181119/kejiyuan1108217393.html"><img src="images/1.jpg"></a>
+            </div>
+            <div class="buttons">
+                <span class="on">1</span>
+                <span>2</span>
+                <span>3</span>
+                <span>4</span>
+                <span>5</span>
+            </div>
+            <a href="javascript:;" class="arrow arrow_left">&lt;</a>
+            <a href="javascript:;" class="arrow arrow_right">&gt;</a>
+        </div>
+    </div>
+    <div id="officialAccounts">
+    	<h1>公众号</h1>
+    	<p>1、小冰</p>
+    	<p>2、齐悟机器人</p>
+    	<p>3、科大讯飞</p>
+    	<div id="picture">
+    		<img src="images/小冰.jpg" width="220px">
+    		<img src="images/齐悟机器人.jpg" width="220px">
+    		<img src="images/科大讯飞.jpg" width="220px">
+    	</div>
+    </div>
+    </div>
+   <script>
+        var wrap = document.querySelector(".wrap");
+        var next = document.querySelector(".arrow_right");
+        var prev = document.querySelector(".arrow_left");
+        next.onclick = function () {
+            next_pic();
+        }
+        prev.onclick = function () {
+            prev_pic();
+        }
+        function next_pic () {
+            index++;
+            if(index > 4){
+                index = 0;
+            }
+            showCurrentDot();
+            var newLeft;
+            if(wrap.style.left === "-3600px"){
+                newLeft = -1200;
+            }else{
+                newLeft = parseInt(wrap.style.left)-600;
+            }
+            wrap.style.left = newLeft + "px";
+        }
+        function prev_pic () {
+            index--;
+            if(index < 0){
+                index = 4;
+            }
+            showCurrentDot();
+            var newLeft;
+            if(wrap.style.left === "0px"){
+                newLeft = -2400;
+            }else{
+                newLeft = parseInt(wrap.style.left)+600;
+            }
+            wrap.style.left = newLeft + "px";
+        }
+        var timer = null;
+        function autoPlay () {
+            timer = setInterval(function () {
+                next_pic();
+            },2000);
+        }
+        autoPlay();
+
+        var container = document.querySelector(".container");
+        container.onmouseenter = function () {
+            clearInterval(timer);
+        }
+        container.onmouseleave = function () {
+            autoPlay();    
+        }
+
+        var index = 0;
+        var dots = document.getElementsByTagName("span");
+        function showCurrentDot () {
+            for(var i = 0, len = dots.length; i < len; i++){
+                dots[i].className = "";
+            }
+            dots[index].className = "on";
+        }
+
+        for (var i = 0, len = dots.length; i < len; i++){
+            (function(i){
+                dots[i].onclick = function () {
+                    var dis = index - i;
+                    if(index == 4 && parseInt(wrap.style.left)!==-3000){
+                        dis = dis - 5;     
+                    }
+                    //和使用prev和next相同，在最开始的照片5和最终的照片1在使用时会出现问题，导致符号和位数的出错，做相应地处理即可
+                    if(index == 0 && parseInt(wrap.style.left)!== -600){
+                        dis = 5 + dis;
+                    }
+                    wrap.style.left = (parseInt(wrap.style.left) +  dis * 600)+"px";
+                    index = i;
+                    showCurrentDot();
+                }
+            })(i);            
+        }
+    </script>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <div class="copyright">
+        2018&nbsp;&copy;&nbsp;CaiFH
+    </div>
+
+</body>
+</html>

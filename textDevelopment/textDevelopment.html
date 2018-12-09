@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>拓展学习</title>
+	<script type="text/javascript"></script>	
+	<style type="text/css"></style>
+	<link rel="stylesheet" type="text/css" href="textDevelopmentCSS.css" />
+</head>
+<body>
+    <div class="header">
+    	<div id="logo" style="float: left;">
+    		<img src="images/logo.png" style="height: 62px;">
+    	</div>
+     	<div id="menu">
+     		<ul>
+            <li><a href="../index.html">导学</a></li>
+            <li>
+                <a href="">教学</a>
+                <div class="dropdown-content">
+                    <a href="../textTeaching/textTeaching.html">简单认识</a>
+                    <a href="../smallClass1/smallClass1.html">微课1</a>
+                    <a href="../smallClass2/smallClass2.html">微课2</a>
+                </div>    
+            </li>
+            <li><a href="../exam/exam.html">测试</a></li>
+            <li><a href="../textDevelopment/textDevelopment.html">拓展</a></li>
+            <li><a href="../evaluation/evaluation.html">评价反馈</a></li>
+            </ul>
+     	</div>
+     	<div style="width: 100%;background-color: rgb(0,0,0);"><img src="images/head.jpg" width="82%"></div>
+        <div>
+        <p id="title">语音识别技术的拓展</p>
+        <p id="titleAppend">在进行基础原理学习和巩固测试后进行拓展</p>
+        </div>
+    </div>
+    <div id="list">
+        <ul>
+        <li><a href="" id="special">/ 链接材料 /</a></li>
+        <li><a href="../videoDevelopment/videoDevelopment.html" class="normal">/ 视频 /</a></li>
+        <li><a href="../officialAccountsDevelopment/officialAccountsDevelopment.html" class="normal">/ 动态&公众号 /</a></li>
+        </ul>
+    </div>
+    <div style="width:100%;height:2000px;background-color: rgba(0,0,0,0.02);">
+        <div id="text">
+            <h2>【拓展原理】</h2>
+    	    <p style="font-size: 20px;">&nbsp;&nbsp;未知语音经过话筒变换成电信号后加在识别系统的输入端，首先经过预处理，再根据人的语音特点建立语音模型，对输入的语音信号进行分析，并抽取所需的特征，在此基础上建立语音识别所需的模板。而计算机在识别过程中要根据语音识别的模型[1]，将计算机中存放的语音模板与输入的语音信号的特征进行比较，根据一定的搜索和匹配策略[2]，找出一系列最优的与输入语音匹配的模板[3]。然后根据此模板的定义，通过查表[4]就可以给出计算机的识别结果。显然，这种最优的结果与特征的选择、语音模型的好坏、模板是否准确都有直接的关系。<br><br>&nbsp;&nbsp;语音识别系统构建过程包括两大部分：训练和识别。训练通常是离线完成的，对预先收集好的海量语音、语言数据库进行信号处理和知识挖掘[5]，获取语音识别系统所需要的“声学模型”和“语言模型”;而识别过程通常是在线完成的，对用户实时的语音进行自动识别。识别过程通常又可以分为“前端”和“后端”两大模块：“前端”模块主要的作用是进行端点检测(去除多余的静音和非说话声)、降噪、特征提取等;“后端”模块的作用是利用训练好的“声学模型”和“语言模型”对用户说话的特征向量[6]进行统计模式识别(又称“解码”)，得到其包含的文字信息，此外，后端模块还存在一个“自适应”的反馈模块，可以对用户的语音进行自学习[7]，从而对“声学模型”和“语音模型”进行必要的“校正”，进一步提高识别的准确率。<br><br>&nbsp;&nbsp;自动语音识别技术有三个基本原理：首先语音信号中的语言信息是按照短时幅度谱的时间变化模式来编码;其次语音是可以阅读的，即它的声学信号可以在不考虑说话人试图传达的信息内容的情况下用数十个具有区别性的、离散[8]的符号来表示;第三语音交互是一个认知过程，因而不能与语言的语法、语义和语用结构割裂开来。<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;本部分来源：简书[9]</p><br>
+    	    <h2>【技术实现】</h2>
+    	    <p style="font-size: 20px;">&nbsp;&nbsp;一个完整的基于统计的语音识别系统可大致分为三部分：(1)语音信号预处理与特征提取。语音识别一个根本的问题是合理的选用特征。特征参数提取的目的是对语音信号进行分析处理，去掉与语音识别无关的冗余信息[10]，获得影响语音识别的重要信息，同时对语音信号进行压缩。在实际应用中，语音信号的压缩率介于10-100之间。语音信号包含了大量各种不同的信息，提取哪些信息，用哪种方式提取，需要综合考虑各方面的因素，如成本，性能，响应时间，计算量等[11]。非特定人语音识别系统一般侧重提取反映语义的特征参数，尽量去除说话人的个人信息；而特定人语音识别系统则希望在提取反映语义的特征参数的同时，尽量也包含说话人的个人信息。<br><br>&nbsp;&nbsp;(2)声学模型与模式匹配。声学模型是识别系统的底层模型，并且是语音识别系统中最关键的一部分。声学模型的目的是提供一种有效的方法计算语音的特征矢量序列和每个发音模板[12]之间的距离。声学模型的设计和语言发音特点密切相关。声学模型单元大小[13]（字发音模型、半音节模型或音素模型）对语音训练数据量大小、系统识别率，以及灵活性有较大的影响。必须根据不同语言的特点、识别系统词汇量的大小决定识别单元的大小。<br><br>&nbsp;&nbsp;(3)语言模型与语言处理。语言模型对中、大词汇量的语音识别系统特别重要。当分类发生错误时可以根据语言学模型、语法结构、语义学进行判断纠正，特别是一些同音字则必须通过上下文结构才能确定词义。语言学理论包括语义结构、语法规则、语言的数学描述模型等有关方面。目前比较成功的语言模型通常是采用统计语法的语言模型与基于规则语法结构命令语言模型[14]。语法结构可以限定不同词之间的相互连接关系，减少了识别系统的搜索空间，这有利于提高系统的识别。<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;本部分来源：百度百科[15]</p><br>
+    	    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    	    <a href="http://www.sohu.com/a/117272973_413981" style="text-decoration: none;">
+    	    <img src="images/information.jpg" height="260px">链接新闻</a>
+        </div>
+        <div id="explanation">
+            <h2 style="font-family: 'SimSun';">[内容说明]</h2>
+        	<p style="font-family: 'youyuan';color: rgba(27,61,118,0.85);"><br><br><br>[1]模型：输入的语音信号的语音模型<br>[2]搜索和匹配策略：进行声学模型和语言模型上的搜索匹配<br>[3]模板：计算机中存放好的语音模型<br>[4]查表：查找输入的语音信号与已有的语音识别库内容进行查找比对<br><br>[5]知识挖掘：从数据集中识别出有效的、新颖的、潜在有用的内容。<a href="https://baike.baidu.com/item/%E7%9F%A5%E8%AF%86%E6%8C%96%E6%8E%98" style="text-decoration: none;">单击查看详细内容</a><br><br><br>[6]特征向量：输入的语音信号进行缩放变换<br>[7]自学习：机器在多次语音识别过程中通过评估已进行的语音识别行为的正确性，自动修改识别系统结构以增加语音识别的准确性<br><br>[8]离散：非连续的<br><br><br><br>[9]<a href="https://www.jianshu.com/p/9888d593f1b1" style="text-decoration: none;">原文链接</a><br><br><br><br><br><br><br>[10]冗余信息：多余的无用信息<br><br><br><br>[11]提取特征需要机器利用程序来实现<br><br><br><br><br><br>[12]发音模板：机器中已存储的模板<br>[13]可简单理解未每个音素所涵盖的范围<br><br><br><br><br><br><br><br>[14]可简单理解为将语言抽象为数学模型，以定量方法计算语言<br><br><br>[15]<a href="https://baike.baidu.com/item/%E8%AF%AD%E9%9F%B3%E8%AF%86%E5%88%AB%E6%8A%80%E6%9C%AF/5732447" style="text-decoration: none;">查看词条</a></p>
+        </div>
+    </div><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <div class="copyright">
+        2018&nbsp;&copy;&nbsp;CaiFH
+    </div>
+</body>
+</html>

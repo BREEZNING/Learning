@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>初识语音识别技术</title>
+	<script type="text/javascript" src="index/indexJS.js"></script>	
+	<style type="text/css"></style>
+	<link rel="stylesheet" type="text/css" href="index/indexCSS.css" />
+</head>
+<body>
+    <div class="header">
+    	<div id="logo" style="float: left;">
+    		<img src="index/images/logo.png" style="height: 62px;">
+    	</div>
+     	<div id="menu">
+     		<ul>
+     		<li><a href="">导学</a></li>
+     		<li>
+     			<a href="">教学</a>
+     			<div class="dropdown-content">
+     				<a href="textTeaching/textTeaching.html">简单认识</a>
+     				<a href="smallClass1/smallClass1.html">微课1</a>
+     				<a href="smallClass2/smallClass2.html">微课2</a>
+     			</div>    
+     		</li>
+     		<li><a href="exam/exam.html">测试</a></li>
+     		<li><a href="textDevelopment/textDevelopment.html">拓展</a></li>
+     		<li><a href="evaluation/evaluation.html">评价反馈</a></li>
+     		</ul>
+     	</div>
+    </div>
+    <br><br>
+    <p style="text-align: center; color: rgba(79,153,175,0.5);font-family: 'NSimSun',
+        'Microsoft Yahei';letter-spacing: 10px;font-size: 37px;font-weight: bold;">[课/程/设/置]</p>
+    <div style="width:80%;margin-left: 10%;">
+    	<div class="card">
+    		<a href="textTeaching/textTeaching.html" style="text-decoration: none;">
+    		<img src="index/images/course1.png" style="width:100%;">
+    		<div class="container">简单认识</div></a>
+    	</div>
+    	<div class="card">
+    		<a href="smallClass1/smallClass1.html" style="text-decoration: none;">
+    		<img src="index/images/course2.png" style="width:100%;">
+    		<div class="container">微课1-基本原理</div></a>
+    	</div>
+    	<div class="card">
+    		<a href="smallClass2/smallClass2.html" style="text-decoration: none;">
+    		<img src="index/images/course3.png" style="width:100%;">
+    		<div class="container">微课2-实际应用</div></a>
+    	</div>
+    </div>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <p style="text-align: center; color: rgba(79,153,175,0.7);font-family: 'NSimSun',
+        'Microsoft Yahei';letter-spacing: 10px;font-size: 37px;font-weight: bold;">[课/程/概/述]
+    </p>
+    <div id="instruction">
+        <p style="margin-top: 8px;">近二十年来，语音识别技术从实验室走进人们的生活<br>本课程联系生活层面以简单易懂的语言对语音识别技术进行讲解<br>
+    	开始学习之前，先在下面的量表中选择与你情况最相符的选项<br>根据选项情况会推荐适合的学习路径给你，可以参考学习路径进行学习<br></p>
+    </div>
+    <div style="margin-top: 35px;text-align: center;">
+    	<div><img src="index/images/箭头.png" width="50px"></div>
+    </div>
+
+<!-- 不同选项显示不同内容的测试代码-->
+    <div id="selection">   
+        <p>1、我能讲出语音识别技术的实现原理（在下拉框中选择一个选项）</p>
+        <select id='selecttb' onchange="selection1(this)">   
+            <option value=''></option> 
+            <option value='1'>非常同意</option>  
+            <option value='2'>同意</option>  
+            <option value='3'>一般</option> 
+            <option value='4'>不同意</option>
+            <option value='5'>非常不同意</option>  
+        </select> 
+            <div id="tb1"> 微课2 → 测试</div> 
+            <div id="tb2"> </div>  
+            <div id="tb3"> </div> 
+            <div id="tb4"> </div> 
+            <div id="tb5"> </div> 
+        <p>2、我常使用语音转文字的输入方式</p>
+        <select id='selecttb' onchange="selection2(this)">   
+            <option value=''></option> 
+            <option value='6'>非常同意</option>  
+            <option value='7'>同意</option>  
+            <option value='8'>一般</option> 
+            <option value='9'>不同意</option>
+            <option value='10'>非常不同意</option>  
+        </select> 
+            <div id="tb6"> </div> 
+            <div id="tb7"> </div>  
+            <div id="tb8"> </div> 
+            <div id="tb9"> </div> 
+            <div id="tb10"> </div>
+        <p>3、我常使用手机的语音助手</p>
+        <select id='selecttb' onchange="selection3(this)">   
+            <option value=''></option> 
+            <option value='11'>非常同意</option>  
+            <option value='12'>同意</option>  
+            <option value='13'>一般</option> 
+            <option value='14'>不同意</option>
+            <option value='15'>非常不同意</option>  
+        </select> 
+            <div id="tb11"> </div> 
+            <div id="tb12"> </div>  
+            <div id="tb13"> </div> 
+            <div id="tb14"> </div> 
+            <div id="tb15"> </div>
+        <p>4、我之前有接触过语音识别的软件</p>
+        <select id='selecttb' onchange="selection4(this)">   
+            <option value=''></option> 
+            <option value='16'>非常同意</option>  
+            <option value='17'>同意</option>  
+            <option value='18'>一般</option> 
+            <option value='19'>不同意</option>
+            <option value='20'>非常不同意</option>  
+        </select> 
+            <div id="tb16"> </div> 
+            <div id="tb17"> </div>  
+            <div id="tb18"> </div> 
+            <div id="tb19"> 简单认识</div> 
+            <div id="tb20"> 简单认识</div>
+        <p>5、相对于在知识实际应用过程中理解理论知识，我偏向于理论知识讲解以动画等动态方式呈现<br>（若第一题选择了“非常同意”，请跳过此题）</p>
+        <select id='selecttb' onchange="selection5(this)">   
+            <option value=''></option> 
+            <option value='21'>非常同意</option>  
+            <option value='22'>同意</option>  
+            <option value='23'>一般</option> 
+            <option value='24'>不同意</option>
+            <option value='25'>非常不同意</option>  
+        </select> 
+            <div id="tb21"> 微课1 → 微课2 → 测试</div> 
+            <div id="tb22"> 微课1 → 微课2 → 测试</div>  
+            <div id="tb23"> 微课1 → 微课2 → 测试</div> 
+            <div id="tb24"> 微课2 → 微课1 → 测试</div> 
+            <div id="tb25"> 微课2 → 微课1 → 测试</div>
+        <p>6、阅读理论知识的文字材料让我感到枯燥，看不下去</p>
+        <select id='selecttb' onchange="selection7(this)">   
+            <option value=''></option> 
+            <option value='31'>非常同意</option>  
+            <option value='32'>同意</option>  
+            <option value='33'>一般</option> 
+            <option value='34'>不同意</option>
+            <option value='35'>非常不同意</option>  
+        </select> 
+            <div id="tb31"> </div> 
+            <div id="tb32"> </div>  
+            <div id="tb33"> 拓展-链接材料</div> 
+            <div id="tb34"> 拓展-链接材料</div> 
+            <div id="tb35"> 拓展-链接材料</div>
+        <p>7、我会将所学知识进行拓展</p>
+        <select id='selecttb' onchange="selection8(this)">   
+            <option value=''></option> 
+            <option value='36'>非常同意</option>  
+            <option value='37'>同意</option>  
+            <option value='38'>一般</option> 
+            <option value='39'>不同意</option>
+            <option value='40'>非常不同意</option>  
+        </select> 
+            <div id="tb36"> 拓展-视频</div> 
+            <div id="tb37"> 拓展-视频</div>  
+            <div id="tb38"> 拓展-视频</div> 
+            <div id="tb39"> </div> 
+            <div id="tb40"> </div>
+        <p>8、我喜欢对智能科学技术的原理进行思考</p>
+        <select id='selecttb' onchange="selection9(this)">   
+            <option value=''></option> 
+            <option value='41'>非常同意</option>  
+            <option value='42'>同意</option>  
+            <option value='43'>一般</option> 
+            <option value='44'>不同意</option>
+            <option value='45'>非常不同意</option>  
+        </select> 
+            <div id="tb41"> 拓展-动态&公众号</div> 
+            <div id="tb42"> 拓展-动态&公众号</div>  
+            <div id="tb43"> 拓展-动态&公众号</div> 
+            <div id="tb44"> </div> 
+            <div id="tb45"> </div><br><br>
+        <button type="button" id="button" onclick="show()">确定</button>
+        <p id="lead" style="text-align: center;color: blue;padding-top: 10px;display:none;">
+        自上往下的红色显示结果是适合你的学习路径，请参照进行学习
+        </p>
+    </div><br><br><br><br><br><br>
+    <div class="copyright">
+    	2018&nbsp;&copy;&nbsp;CaiFH
+    </div>
+</body>
+</html>

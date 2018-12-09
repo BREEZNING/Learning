@@ -1,0 +1,164 @@
+body{
+	width:100%;
+	font-family: 'SimSun','FangSong','Microsoft Yahei';
+}
+.header{
+	background-image:url(images/首页图.png);
+	background-repeat: no-repeat;
+	background-size: auto 100%;
+	background-position: 50% 50%;
+	width:100%;
+	height:350px;
+}
+.header ul{
+list-style-type:none;
+float:left;
+padding:0;
+
+}
+.header li{
+	display: inline;
+	float: left;
+	
+}
+.header a{
+	text-decoration: none;
+	width:150px;
+	text-align: center;
+	color: white;
+    font-weight: bold;
+	font-size: 22px;
+	letter-spacing: 3px;
+	padding: 6px;
+    margin-left: 120px;
+}
+.header li:hover a{
+	color: #006277;
+}
+
+/* 在鼠标移上去后显示下拉菜单 */
+.header li:hover .dropdown-content {
+    display: block;
+}
+
+/* 容器 <div> - 需要定位下拉内容 */
+.dropdown {
+    display: inline-block;
+}
+
+/* 下拉内容 (默认隐藏) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    max-width: 120px;
+}
+
+/* 下拉菜单的链接 */
+.dropdown-content a {
+    color: black;
+    background-color: rgba(255,255,255,0.8);
+    padding: 10px 12px;
+    text-decoration: none;
+    font-size: 18px;
+    display: block;
+    width:120px;
+}
+
+/* 鼠标移上去后修改下拉菜单链接颜色 */
+.dropdown-content a:hover {
+	background-color: #cccccc;
+}
+
+#menu{
+	background-color: rgba(0,0,0,0.2);
+	width: 100%;
+	height:62px;
+	box-shadow: 30px 0 30px 0 rgba(255,255,255,0.2);
+}
+
+.card{
+	width:23%;
+	background-color: #ffffff;
+	box-shadow: 0 8px 10px 0 rgba(0, 0, 0, 0.3);
+	float: left;
+	margin-left: 95px;
+	transition: All 0.4s ease-in-out;
+    -webkit-transition: All 0.4s ease-in-out;
+    -moz-transition: All 0.4s ease-in-out;
+    -o-transition: All 0.4s ease-in-out;
+}
+.card:hover{
+    transform: scale(1.15);
+    -webkit-transform: scale(1.15);
+    -moz-transform: scale(1.15);
+    -o-transform: scale(1.15);
+    -ms-transform: scale(1.15);
+	box-shadow: rgba(0,0,0,0.8) 0 0 30px;
+}
+
+.container{
+	text-align: center;
+	padding: 16px 16px;
+	font-size: 18px;
+	letter-spacing: 5px;
+}
+#instruction{
+	text-align: center;
+	font-size: 21px;
+	letter-spacing: 5px;
+	line-height: 50px;
+    font-weight: 100;
+    color: rgba(0,0,0,0.7);
+	text-shadow: 0 0 5px rgb(79,153,175);
+	font-family: 'YouYuan','STZhongsong';
+	box-shadow: rgba(0,0,0,0.3) 0 0 50px;
+	width: 60%;
+	padding-top: 30px;
+	padding-bottom: 30px;
+	margin-left: 20%;
+	background-image: url("images/background2.jpg");
+}
+
+#selection{
+	width:60%;
+	height: 1000px;
+	margin-left: 20%;
+	box-shadow: rgba(0,0,0,0.3) 0 0 20px;
+	padding-top:20px;
+	padding-bottom:30px;
+	margin-top: 20px;
+	background-image: url("images/background.jpg");
+}
+#selection div{
+	display:none;
+	font-size: 17px;
+	color: red;
+	margin-left: 110px;
+	margin-top: 15px;
+	font-family: 'Microsoft Yahei';
+}
+#selection p{
+	margin-left: 60px;
+	margin-top: 22px;
+	font-size: 18px;
+}
+#selection select{
+	margin-left: 90px;
+}
+
+#button{
+	margin-top: 30px;
+	margin-left: 90px;
+	width: 90px;
+	height:36px;
+	font-size: 17px;
+}
+.copyright{
+	background-color: rgba(0,0,0,0.1);
+	color: rgba(0,0,0,0.5);
+	text-align: center;
+	padding: 45px;
+	font-size: 16px;
+	letter-spacing: 2px;
+	font-family: 'Yahei';
+}
